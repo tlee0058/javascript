@@ -19,12 +19,24 @@ Make sure it works for negative numbers
 If the user doesn't pass a skip amount, make it default to 1 (printRange(4, 8); would print 4, 5, 6, 7)
 If the user doesn't pass an end point, make it start at 0, and end at the first (printRange(4); would print 0, 1, 2, 3)*/
 
-function printRange(a, b, mult){
-    for(var i = a; i < b+1; i++){
-        if(i % mult === 0){
-        console.log(i);
-        }
-    
-    }
-}
-printRange(-9, 9, 2);
+		function printRange(start, end, iterate){
+			for (var i = start; i < end; i += iterate) {
+				console.log(i)
+			}
+		}
+		printRange(2, 10, 2);
+
+		function printRangeBonus(start, end, iterate){
+			if(!end){
+				end = start;
+				start = 0;
+			}
+			if(!iterate){
+				iterate = 1;
+			}
+			for (var i = start; i < end; i += iterate) {
+				console.log(i)
+			}
+		}
+		printRange(4, 8)
+		printRange(4)
